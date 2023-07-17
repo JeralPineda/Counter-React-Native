@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableNativeFeedback, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableNativeFeedback,
+  View,
+  Platform,
+  TouchableOpacity,
+} from 'react-native';
 
 interface ButtonProps {
   title: string;
@@ -9,18 +16,35 @@ interface ButtonProps {
 }
 
 const Button = ({onPress, position, title, disabled = false}: ButtonProps) => {
-  return (
-    <View style={[Styles.fabLocation, Styles[position]]}>
-      <TouchableNativeFeedback
-        onPress={onPress}
-        background={TouchableNativeFeedback.Ripple('#3431e0fc', true, 30)}>
-        {/* TouchableOpacity */}
+  const ios = () => {
+    return (
+      <TouchableOpacity
+        style={[Styles.fabLocation, Styles[position]]}
+        activeOpacity={0.8}
+        onPress={onPress}>
         <View style={[Styles.fab, disabled ? Styles.disabled : Styles.enabled]}>
           <Text style={Styles.fabText}>{title}</Text>
         </View>
-      </TouchableNativeFeedback>
-    </View>
-  );
+      </TouchableOpacity>
+    );
+  };
+
+  const android = () => {
+    return (
+      <View style={[Styles.fabLocation, Styles[position]]}>
+        <TouchableNativeFeedback
+          onPress={onPress}
+          background={TouchableNativeFeedback.Ripple('#3431e0fc', true, 30)}>
+          <View
+            style={[Styles.fab, disabled ? Styles.disabled : Styles.enabled]}>
+            <Text style={Styles.fabText}>{title}</Text>
+          </View>
+        </TouchableNativeFeedback>
+      </View>
+    );
+  };
+
+  return Platform.OS === 'android' ? android() : ios();
 };
 
 export default Button;
