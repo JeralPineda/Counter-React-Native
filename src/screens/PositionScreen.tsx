@@ -1,9 +1,10 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import React from "react";
+import {StyleSheet, View} from "react-native";
 
 const PositionScreen = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.greenBox} />
       <View style={styles.purpleBox} />
       <View style={styles.orangeBox} />
     </View>
@@ -14,26 +15,45 @@ export default PositionScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#28c4d9',
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#28c4d9",
+    // justifyContent: "center",
+    // alignItems: "center",
   },
 
   purpleBox: {
     width: 100,
     height: 100,
-    backgroundColor: '#5856d6',
+    backgroundColor: "#5856d6",
     borderWidth: 10,
-    borderColor: 'white',
+    borderColor: "white",
+    position: "absolute",
+    top: 0,
+    right: 0,
   },
 
   orangeBox: {
     width: 100,
     height: 100,
-    backgroundColor: '#f0a23b',
+    backgroundColor: "#f0a23b",
     borderWidth: 10,
-    borderColor: 'white',
-    top: -50,
+    borderColor: "white",
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+  },
+
+  greenBox: {
+    // width: 100,
+    // height: 100,
+    backgroundColor: "green",
+    borderWidth: 10,
+    borderColor: "white",
+    // position: "absolute",
+    // top: 0,
+    // left: 0,
+
+    //
+    ...StyleSheet.absoluteFillObject, // suma de (position: "absolute",  top: 0, left: 0, right: 0, bottom: 0), si no tiene width se estira al tamaño del padre
   },
 });
