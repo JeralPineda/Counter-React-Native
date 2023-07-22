@@ -1,10 +1,10 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import React from "react";
+import {SafeAreaView, StyleSheet} from "react-native";
 
 // import CounterScreen from './screens/CounterScreen';
 // import BoxObjectModelScreen from './screens/BoxObjectModelScreen';
 // import DimensionsScreen from './screens/DimensionsScreen';
-import PositionScreen from './screens/PositionScreen';
+import PositionScreen from "./screens/PositionScreen";
 
 function App(): JSX.Element {
   return (

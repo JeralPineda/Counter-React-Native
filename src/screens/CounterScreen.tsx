@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import Button from '../components/ui/Button';
+import React, {useState} from "react";
+import {StyleSheet, Text, View} from "react-native";
+import Button from "../components/ui/Button";
 
 const CounterScreen = () => {
   const [counter, setCounter] = useState(0);
@@ -37,12 +37,12 @@ export default CounterScreen;
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
 
   title: {
     fontSize: 40,
     top: -15,
-    textAlign: 'center',
+    textAlign: "center",
   },
 });

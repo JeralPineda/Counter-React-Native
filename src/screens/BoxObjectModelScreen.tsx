@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React from "react";
+import {StyleSheet, Text, View} from "react-native";
 
 const BoxObjectModelScreen = () => {
   return (
@@ -14,7 +14,7 @@ export default BoxObjectModelScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: "red",
   },
   title: {
     fontSize: 20,
